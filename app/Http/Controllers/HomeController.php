@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         if(Auth::check())
         {
-            dd(Auth::guard()->user()->api_token);
+            return Auth::guard()->user()->Facebook->first()->getAvatar();
         }
         else
         {

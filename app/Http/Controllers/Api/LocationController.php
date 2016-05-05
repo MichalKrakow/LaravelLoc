@@ -18,6 +18,7 @@ class LocationController extends Controller
 		//$this->middleware(['throttle:15','auth:api']);
 		$this->user = Auth::guard('api')->user();
 	}
+
 	/*
 		Gives Last user location
 	 */
@@ -25,7 +26,6 @@ class LocationController extends Controller
 	{
 		return $this->user->Locations->last();
 	}
-
 
 	/*
 		Locations filtered by day

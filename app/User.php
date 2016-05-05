@@ -24,6 +24,10 @@ class User extends Authenticatable
         'password', 'remember_token', 'api_token'
     ];
 
+    public function Facebook()
+    {
+        return $this->hasMany('App\SocialAccount');
+    }
     public function Locations()
     {
         return $this->hasMany("App\Location");

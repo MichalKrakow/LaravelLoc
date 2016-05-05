@@ -12,16 +12,8 @@
 */
 //Social Login
 
-Route::get('/login/{provider}',[
-    'uses' => 'FacebookController@getSocialAuth',
-    'as'   => 'auth.getSocialAuth'
-]);
-
-
-Route::get('/login/callback/{provider}',[
-    'uses' => 'FacebookController@getSocialAuthCallback',
-    'as'   => 'auth.getSocialAuthCallback'
-]);
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
 
 Route::auth();
 Route::get('/home', 'HomeController@index');
